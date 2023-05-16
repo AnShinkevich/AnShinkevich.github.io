@@ -11,9 +11,7 @@ const props = defineProps({
 
 <template>
     <section class="section-bottom">
-        <div
-            class="block-bottom"
-        >
+        <div class="block-bottom">
             <div class="block-bottom-inner">
                 <div class="block-bottom-pic pic-humidity"></div>
                 <div class="block-bottom-texts">

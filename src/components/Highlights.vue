@@ -181,221 +181,208 @@ const sunsetTime = computed(() => {
 @import "../assets/styles/main";
 
 .highlights {
-    padding: 28px 16px 16px;
-    background: url("/src/assets/img/gradient-4.jpg") no-repeat 0% 0%;
+    padding: 1.75rem 1rem 1rem;
+    background-color: $card-bcg;
     background-size: cover;
-    border-radius: 25px;
-}
-.highlights-wrapper {
-    display: flex;
-    justify-content: space-between;
-}
-@media (max-width: 575px) {
-    .highlights-wrapper {
-        flex-direction: column;
+    border-radius: 1.5625rem;
+    &-wrapper {
+        display: flex;
+        justify-content: space-between;
     }
 }
 .title {
-    padding-bottom: 16px;
+    padding-bottom: 1rem;
 }
 .highlight {
     width: 32%;
 }
-@media (max-width: 575px) {
-    .highlight {
-        width: 100%;
-        margin-bottom: 16px;
-    }
-}
 .card {
-    min-height: 230px;
-    padding: 16px;
-    background: url("/src/assets/img/gradient-2.jpg") no-repeat 50% 50%;
+    min-height: 14.375rem;
+    padding: 1rem;
+    background: -webkit-linear-gradient(0deg, rgb(40, 62, 82), rgb(75, 121, 160) 51%, rgb(40, 62, 82) 100%);
+    background: -moz-linear-gradient(0deg, rgb(40, 62, 82), rgb(75, 121, 160) 51%, rgb(40, 62, 82) 100%);
+    background: linear-gradient(0deg, rgb(40, 62, 82), rgb(75, 121, 160) 51%, rgb(40, 62, 82) 100%);
     background-size: cover;
-    border-radius: 8px;
-}
-@media (max-width: 1199px) {
-    .card {
-        padding: 12px;
+    border-radius: 0.5rem;
+    &-centered {
+        display: flex;
+        justify-content: center;
+        margin-top: 2.5rem;
     }
-}
-.card-centered {
-    display: flex;
-    justify-content: center;
-    margin-top: 40px;
-}
-.card-justify {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 40px;
-}
-.card-title {
-    padding-bottom: 12px;
-    font-size: 13px;
-}
-@media (max-width: 1199px) {
-    .card-title {
-        font-size: 12px;
+    &-justify {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 2.5rem;
     }
-}
-.card-pic {
-    width: 100%;
-    height: 90px;
-    margin-bottom: 16px;
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-    background-size: contain;
-}
-.card-pic--wind {
-    background-image: url("/src/assets/img/equalizer (2).png");
-}
-.card-pic--pressure {
-    background-image: url("/src/assets/img/barometer.png");
-}
-.card-pic--sun {
-    background-image: url("/src/assets/img/sun-moving.png");
+    &-title {
+        padding-bottom: 0.75rem;
+        font-size: 0.8125rem;
+    }
+    &-pic {
+        width: 100%;
+        height: 5.625rem;
+        margin-bottom: 1rem;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-size: contain;
+        &--wind {
+            background-image: url("/src/assets/img/equalizer (2).png");
+        }
+        &--pressure {
+            background-image: url("/src/assets/img/barometer.png");
+        }
+        &--sun {
+            background-image: url("/src/assets/img/sun-moving.png");
+        }
+    }
 }
 .states {
     display: flex;
     justify-content: space-between;
-}
-.states--margin {
-    margin-top: 40px;
+    &--margin {
+        margin-top: 2.5rem;
+    }
 }
 .state {
     width: 40%;
-}
-.state:last-child {
-    text-align: right;
-}
-.state-pic {
-    width: 20px;
-    height: 20px;
-    margin-bottom: 6px;
-    background: url("/src/assets/img/sun.svg") no-repeat 50% 50%;
-    background-size: cover;
-}
-.state-pic--flipped {
-    margin-left: auto;
-    -webkit-transform: scaleX(-1);
-    transform: scaleX(-1);
-}
-.state-title {
-    font-size: 12px;
-    color: $gold;
-}
-.state-time {
-    font-size: 13px;
-    font-weight: 700;
-}
-@media (max-width: 1199px) {
-    .state-time {
-        font-size: 11px;
+    &:last-child {
+        text-align: right;
+    }
+    &-pic {
+        width: 1.25rem;
+        height: 1.25rem;
+        margin-bottom: 0.375rem;
+        background: url("/src/assets/img/sun.svg") no-repeat 50% 50%;
+        background-size: cover;
+        &--flipped {
+            margin-left: auto;
+            -webkit-transform: scaleX(-1);
+            transform: scaleX(-1);
+        }
+    }
+    &-title {
+        font-size: 0.75rem;
+        color: $gold;
+    }
+    &-time {
+        font-size: 0.8125rem;
+        font-weight: 700;
     }
 }
 .info-main {
     display: flex;
     align-items: flex-end;
-}
-.info-main:last-child {
-    text-align: right;
-}
-.info-main-num {
-    font-size: 20px;
-}
-@media (max-width: 1199px) {
-    .info-main-num {
-        font-size: 18px;
+    &:last-child {
+        text-align: right;
     }
-}
-.info-main-text {
-    padding-left: 2px;
-    padding-bottom: 3px;
-    font-size: 13px;
-    color: rgba(255, 255, 255, 0.75);
-}
-@media (max-width: 1199px) {
-    .info-main-text {
-        padding-bottom: 1.5px;
-        font-size: 12px;
+    &-num {
+        font-size: 1.25rem;
+    }
+    &-text {
+        padding-left: 0.125rem;
+        padding-bottom: 0.1875rem;
+        font-size: 0.8125rem;
+        color: rgba(255, 255, 255, 0.75);
     }
 }
 .card-small {
-    margin-top: 12px;
-    padding: 12px 16px;
-    background: url("/src/assets/img/gradient-2.jpg") no-repeat 50% 50%;
+    margin-top: 0.75rem;
+    padding: 0.75rem 1rem;
+    background: -webkit-linear-gradient(0deg, rgb(40, 62, 82), rgb(75, 121, 160) 51%, rgb(40, 62, 82) 100%);
+    background: -moz-linear-gradient(0deg, rgb(40, 62, 82), rgb(75, 121, 160) 51%, rgb(40, 62, 82) 100%);
+    background: linear-gradient(0deg, rgb(40, 62, 82), rgb(75, 121, 160) 51%, rgb(40, 62, 82) 100%);
     background-size: cover;
-    border-radius: 8px;
-}
-.card-small-title {
-    font-size: 13px;
-}
-.card-small-info {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    border-radius: 0.5rem;
+    &-title {
+        font-size: 0.8125rem;
+    }
+    &-info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &-pic {
+        width: 1.25rem;
+        height: 1.25rem;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-size: contain;
+        &--margin {
+            width: 1rem;
+            height: 1rem;
+            margin-bottom: 0.1875rem;
+        }
+        &--wind {
+            background-image: url("/src/assets/img/gusts.svg");
+        }
+        &--pressure {
+            background-image: url("/src/assets/img/humidity.svg");
+        }
+        &--sun {
+            background-image: url("/src/assets/img/cloud.svg");
+        }
+    }
+    &-data {
+        display: flex;
+        align-items: flex-end;
+        width: 45%;
+    }
+    &-hint {
+        width: 55%;
+    }
+    &-text {
+        font-size: 0.6875rem;
+        line-height: 1.2;
+        color: rgba(255, 255, 255, 0.6);
+    }
 }
 @media (max-width: 1199px) {
-    .card-small-info {
+    .card {
+        padding: 0.75rem;
+        &-title {
+            font-size: 0.75rem;
+        }
+        &-small{
+            &-info {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            &-pic {
+                display: none;
+            }
+            &-data {
+                width: 100%;
+                padding-top: 0.5rem;
+            }
+            &-hint {
+                width: 100%;
+            }
+            &-text {
+                min-height: 1.375rem;
+                font-size: 0.5625rem;
+            }
+        }
+    }
+    .state-time {
+        font-size: 0.6875rem;
+    }
+    .info-main{
+        &-num {
+            font-size: 1.125rem;
+        }
+        &-text {
+            padding-bottom: 0.09375rem;
+            font-size: 0.75rem;
+        }
+    }
+}
+@media (max-width: 575px) {
+    .highlight {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+    .highlights-wrapper {
         flex-direction: column;
-        align-items: flex-start;
     }
 }
-.card-small-pic {
-    width: 20px;
-    height: 20px;
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-    background-size: contain;
-}
-@media (max-width: 1199px) {
-    .card-small-pic {
-        display: none;
-    }
-}
-.card-small-pic--margin {
-    width: 16px;
-    height: 16px;
-    margin-bottom: 3px;
-}
-.card-small-pic--wind {
-    background-image: url("/src/assets/img/gusts.svg");
-}
-.card-small-pic--pressure {
-    background-image: url("/src/assets/img/humidity.svg");
-}
-.card-small-pic--sun {
-    background-image: url("/src/assets/img/cloud.svg");
-}
-.card-small-data {
-    display: flex;
-    align-items: flex-end;
-    width: 45%;
-}
-@media (max-width: 1199px) {
-    .card-small-data {
-        width: 100%;
-        padding-top: 8px;
-    }
-}
-.card-small-hint {
-    width: 55%;
-}
-@media (max-width: 1199px) {
-    .card-small-hint {
-        width: 100%;
-    }
-}
-.card-small-text {
-    font-size: 11px;
-    line-height: 1.2;
-    color: rgba(255, 255, 255, 0.6);
-}
-@media (max-width: 1199px) {
-    .card-small-text {
-        min-height: 22px;
-        font-size: 9px;
-    }
-}
-
 </style>

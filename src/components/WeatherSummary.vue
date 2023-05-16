@@ -40,42 +40,42 @@ const today = new Date().toLocaleString('en-EN', { weekday: 'short', year: 'nume
 @import "../assets/styles/main";
 
 .pic-main {
-    width: 60px;
-    height: 60px;
-    margin: 20px 0 12px;
+    width: 3.75rem;
+    height: 3.75rem;
+    margin: 1.25rem 0 0.75rem;
     background-repeat: no-repeat;
     background-position: 50% 50%;
     background-size: contain;
 }
 .city {
-    font-size: 24px;
+    font-size: 1.5rem;
 }
 .weather {
-    margin: 0 0 20px;
-    padding: 20px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    margin: 0 0 1.25rem;
+    padding: 1.25rem 0;
+    border-bottom: 0.0625rem solid rgba(255, 255, 255, 0.4);
 }
 .temp {
-    padding-bottom: 8px;
-    font-size: 32px;
+    padding-bottom: 0.5rem;
+    font-size: 2rem;
 }
 .text-block {
     position: relative;
-    padding-left: 24px;
-    padding-bottom: 8px;
-    font-size: 14px;
-}
-.text-block::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 20px;
-    height: 20px;
-    margin-right: 6px;
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-    background-size: contain;
+    padding-left: 1.5rem;
+    padding-bottom: 0.5rem;
+    font-size: 0.875rem;
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 1.25rem;
+        height: 1.25rem;
+        margin-right: 0.375rem;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-size: contain;
+    }
 }
 .weather-desc::before {
     background-image: url("/src/assets/img/weather.svg");
@@ -84,9 +84,9 @@ const today = new Date().toLocaleString('en-EN', { weekday: 'short', year: 'nume
     background-image: url("/src/assets/img/location.svg");
 }
 .date::before {
-    left: 2px;
-    width: 15px;
-    height: 15px;
+    left: 0.125rem;
+    width: 0.9375rem;
+    height: 0.9375rem;
     background-image: url("/src/assets/img/calendar.svg");
 }
 </style>
