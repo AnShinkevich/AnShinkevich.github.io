@@ -72,50 +72,35 @@ onMounted(getWeather)
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    padding: 20px 0;
-    background-color: #59585d;
+    padding: 1.25rem 0;
+    background: -webkit-linear-gradient(180deg, rgb(75, 121, 160), rgb(40, 62, 82));
+    background: -moz-linear-gradient(180deg, rgb(75, 121, 160), rgb(40, 62, 82));
+    background: linear-gradient(180deg, rgb(75, 121, 160), rgb(40, 62, 82));
 }
 .laptop {
     width: 100%;
-    padding: 20px;
-    background-color: #0e100f;
-    border-radius: 25px;
+    padding: 1.25rem;
+    //background-color: #0e100f;
+    border-radius: 1.5625rem;
 }
 .sections {
     display: flex;
     width: 100%;
 }
-@media (max-width: 767px) {
-    .sections {
-        flex-direction: column;
+.section {
+    &-left{
+        width: 30%;
+        padding-right: 0.625rem;
     }
-}
-.section-left {
-    width: 30%;
-    padding-right: 10px;
-}
-@media (max-width: 767px) {
-    .section-left {
-        width: 100%;
+    &-right {
+        width: 70%;
+        padding-left: 0.625rem;
+    }
+    &-error{
+        min-width: 14.6875rem;
+        width: auto;
         padding-right: 0;
     }
-}
-
-.section-right {
-    width: 70%;
-    padding-left: 10px;
-}
-@media (max-width: 767px) {
-    .section-right {
-        width: 100%;
-        margin-top: 16px;
-        padding-left: 0;
-    }
-}
-.section-error{
-    min-width: 235px;
-    width: auto;
-    padding-right: 0;
 }
 .city-inner {
     position: relative;
@@ -126,9 +111,9 @@ onMounted(getWeather)
     content: '';
     position: absolute;
     top: 0;
-    right: 10px;
-    width: 25px;
-    height: 25px;
+    right: 0.625rem;
+    width: 1.5625rem;
+    height: 1.5625rem;
     background: url("./assets/img/search.svg") no-repeat 50% 50%;
     background-size: contain;
     transform: translateY(50%);
@@ -136,40 +121,55 @@ onMounted(getWeather)
 }
 .info {
     height: 100%;
-    padding: 16px;
-    background: url("./assets/img/gradient-1.jpg") no-repeat 50% 50%;
+    padding: 1rem;
+    background: $card-bcg;
     background-size: cover;
-    border-radius: 25px;
+    border-radius: 1.5625rem;
 }
 .search {
     width: 100%;
-    padding: 16px;
+    padding: 1rem;
     font-family: 'Inter', Arial, sans-serif;
     color: white;
-    background-color: rgba(0, 0, 0, 0.75);
-    border-radius: 16px;
+    background-color: #283e52;
+    border-radius: 1rem;
     border: none;
     outline: none;
     cursor: pointer;
 }
 .section-bottom {
     width: 50%;
-    margin-top: 16px;
+    margin-top: 1rem;
 }
-@media (max-width: 767px) {
-    .section-bottom {
-        width: 100%;
-    }
-}
+
 .error{
-    padding-top: 20px;
+    padding-top: 1.25rem;
     &-title{
-        font-size: 18px;
+        font-size: 1.125rem;
         font-weight: 700;
     }
     &-message{
-        padding-top: 10px;
-        font-size: 12px;
+        padding-top: 0.625rem;
+        font-size: 0.75rem;
+    }
+}
+@media (max-width: 767px) {
+    .sections {
+        flex-direction: column;
+    }
+    .section{
+        &-left {
+            width: 100%;
+            padding-right: 0;
+        }
+        &-right {
+            width: 100%;
+            margin-top: 1rem;
+            padding-left: 0;
+        }
+        &-bottom {
+            width: 100%;
+        }
     }
 }
 </style>
