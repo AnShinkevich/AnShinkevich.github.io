@@ -9,6 +9,8 @@ import Highlights from "./components/Highlights.vue";
 import Coords from "./components/Coords.vue";
 import Humidity from "./components/Humidity.vue";
 
+import {ErrorMessage, Form, Field} from 'vee-validate';
+
 const city = ref('Omsk')
 const weatherInfo = ref(null)
 const isError = computed(() => weatherInfo.value?.cod !== 200)
@@ -19,6 +21,18 @@ function getWeather(){
     .then((data) => weatherInfo.value = data)
 }
 
+function clearCity(){
+    city.value = ''
+}
+
+// function isRequired(value) {
+//     if (value && value.trim()) {
+//         console.log(2)
+//         return true;
+//     }
+//     return 'Please enter city';
+// }
+
 onMounted(getWeather)
 </script>
 
@@ -27,16 +41,19 @@ onMounted(getWeather)
         <main class="main">
             <div class="container">
                 <div class="laptop">
+                    <marquee class="ticker">This is weather app. You can find out the weather in any city in the world using the app. Try it! </marquee>
                     <div class="sections">
                         <section :class="['section', 'section-left', { 'section-error': isError }]">
                             <div class="info">
                                 <div class="city-inner">
                                     <input
-                                        v-model="city"
                                         type="text"
+                                        v-model="city"
                                         class="search"
                                         @keyup.enter="getWeather"
-                                    >
+                                        @click="clearCity"
+                                        placeholder="Enter city"
+                                    />
                                 </div>
                                 <WeatherSummary v-if="!isError" :weatherInfo="weatherInfo"/>
                                 <div v-else class="error">
@@ -83,6 +100,9 @@ onMounted(getWeather)
     //background-color: #0e100f;
     border-radius: 1.5625rem;
 }
+.ticker{
+    margin-bottom: 1rem;
+}
 .sections {
     display: flex;
     width: 100%;
@@ -106,6 +126,14 @@ onMounted(getWeather)
     position: relative;
     display: inline-block;
     width: 100%;
+    span{
+        position: absolute;
+        top: -40px;
+        left: 0;
+        color: $attention;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
 }
 .city-inner::after {
     content: '';
@@ -136,6 +164,12 @@ onMounted(getWeather)
     border: none;
     outline: none;
     cursor: pointer;
+    transition: all 0.2s ease-in;
+    &:focus {
+        -webkit-box-shadow: 0px 5px 16px 2px rgba(34, 60, 80, 0.2);
+        -moz-box-shadow: 0px 5px 16px 2px rgba(34, 60, 80, 0.2);
+        box-shadow: 0px 5px 16px 2px rgba(34, 60, 80, 0.2);
+    }
 }
 .section-bottom {
     width: 50%;
